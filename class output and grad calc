@@ -1,0 +1,31 @@
+class Output:
+    def __init__(self, md: Model,op: Optimizer):
+        self.md = md
+        self.op = op
+
+    def regressions(self, loss_method, compute_method):
+        if loss_method == 'uls':
+            my_para_0 = self.op.get_params()
+            my_para_1 = self.op.fit_model(my_para_0, compute_method, loss_method='uls')
+            new_matrices = self.op.get_matrices(my_para_1)
+            print("Regressions: \n")
+            for var_endo in self.md.structure()[0]['endo']:
+                print(var_endo, end=" ")
+                for var_exo in self.md.structure()[0]['exo']:
+                    if
+            print(tabulate([[self.md.structure[0][latent], 24], ['Bob', 19]], headers=['Name', 'Age'], tablefmt='orgtbl'))
+                    avector = my_opt.fit_model(my_para, loss_method='ml', compute_method='new_fim2')
+        print(my_opt.get_matrices(avector))
+        print()
+
+
+    def compute_jac(self, loss_method):
+        if loss_method == 'uls':
+
+        elif loss_method == 'ml':
+
+        elif loss_method == "gls":
+
+        else:
+            print("Error in loss_method : 'ml', 'uls', 'gls' ")
+            return None
